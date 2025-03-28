@@ -14,32 +14,32 @@
       }
 
       @layer components {
-        .container {
+        .my_container {
           @apply flex h-[100vh] w-full items-center justify-center gap-[1rem]
  perspective-[1000px] transform-3d;
         }
 
-        .container .item {
+        .my_container .item {
           @apply h-[20rem] w-[10rem] cursor-pointer brightness-0 transition-[0.5];
         }
 
-        .container .item:hover {
+        .my_container .item:hover {
           @apply translate-z-[200px] brightness-100;
         }
 
-        .container .item:hover + * {
+        .my_container .item:hover + * {
           @apply translate-z-[150px] rotate-y-[40deg] brightness-[0.6];
         }
 
-        .container .item:hover + * + * {
+        .my_container .item:hover + * + * {
           @apply translate-z-[70px] rotate-y-[40deg] brightness-[0.4];
         }
 
-        .container .item:has(+ *:hover) {
+        .my_container .item:has(+ *:hover) {
           @apply translate-z-[150px] rotate-y-[-40deg] brightness-[0.6];
         }
 
-        .container .item:has(+ * + *:hover) {
+        .my_container .item:has(+ * + *:hover) {
           @apply translate-z-[70px] rotate-y-[-20deg] brightness-[0.4];
         }
 
@@ -47,10 +47,13 @@
           @apply h-full w-full object-cover;
         }
       }
+
+      @layer utilities {
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="my_container">
       <div class="item">
         <img
           src="https://img.freepik.com/free-photo/mythical-dragon-beast-anime-style_23-2151112841.jpg?t=st=1743001834~exp=1743005434~hmac=4966346c6f3c04289a2039243f5cc35f9c1359ce0d71c5bc183af47227defcf6&w=2000"
